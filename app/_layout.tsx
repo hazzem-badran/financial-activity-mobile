@@ -14,9 +14,9 @@ export default function RootLayout() {
 
   return (
     <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
-      <SaveScreen>
+      {/* <SaveScreen> */}
         <Slot />
-      </SaveScreen>
+      {/* </SaveScreen> */}
     </ClerkProvider>
   );
 }
