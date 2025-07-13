@@ -1,31 +1,32 @@
+import { styles } from "@/assets/styles/layout.styles";
 import { SignOutButton } from "@/components/SignOutButton";
 import { COLORS } from "@/constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { DrawerItemList } from "@react-navigation/drawer";
 import { Drawer } from "expo-router/drawer";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // Custom Drawer Content
 function CustomDrawerContent(props: any) {
   return (
-    <View style={styles.drawerContainer}>
+    <View style={styles.sideMenuContainer}>
       {/* Header with Image */}
-      <View style={styles.drawerHeader}>
+      <View style={styles.sideMenuHeader}>
         <Image 
           source={require("@/assets/images/logo.png")} 
-          style={styles.drawerImage}
+          style={styles.headerLogo}
           resizeMode="contain"
         />
-        <Text style={styles.drawerTitle}>Financial App</Text>
+        <Text style={styles.headerTitle}>Financial App</Text>
       </View>
       
       {/* Drawer Items */}
-      <View style={styles.drawerItemsContainer}>
+      <View style={styles.menuItemsContainer}>
         <DrawerItemList {...props} />
         
         {/* Sign Out Button */}
-        {/* <View style={styles.signOutButton}> */}
+        {/* <View style={styles.signOutButtonContainer}> */}
           <SignOutButton />
         {/* </View> */}
       </View>
@@ -85,44 +86,3 @@ export default function Layout() {
     </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  drawerContainer: {
-    flex: 1,
-    backgroundColor: COLORS.background,
-  },
-  drawerHeader: {
-    backgroundColor: COLORS.primary,
-    paddingVertical: 45,
-    paddingHorizontal: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 10,
-  },
-  drawerImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    marginBottom: 10,
-  },
-  drawerTitle: {
-    color: COLORS.white,
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  drawerContent: {
-    paddingTop: 0,
-  },
-  drawerItemsContainer: {
-    flex: 1,
-    paddingTop: 0,
-  },
-  signOutButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-    marginHorizontal: 10,
-    marginTop: 5,
-  },
-});
