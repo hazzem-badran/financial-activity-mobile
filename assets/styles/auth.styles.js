@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
     width: "100%",
   },
   illustration: {
-    width: 300,
-    height: 310,
+    width: 330,
+    height: 360,
     resizeMode: "contain",
   },
   title: {
