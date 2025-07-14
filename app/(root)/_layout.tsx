@@ -63,7 +63,7 @@ export default function Layout() {
         />
 
         <Drawer.Screen
-          name="creare"
+          name="create"
           options={{
             drawerLabel: "Create",
             title: "Create",

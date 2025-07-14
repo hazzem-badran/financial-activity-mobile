@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.card,
     borderRadius: 20,
     padding: 20,
-    marginBottom: 20,
+    marginBottom: 16,
     shadowColor: COLORS.shadow,
     shadowOffset: {
       width: 0,
@@ -94,13 +94,15 @@ export const styles = StyleSheet.create({
     elevation: 3,
   },
   balanceTitle: {
-    fontSize: 16,
+    fontSize: 14,
     color: COLORS.textLight,
+    textAlign: "center",
     marginBottom: 8,
   },
   balanceAmount: {
     fontSize: 32,
     fontWeight: "bold",
+    textAlign: "center",
     color: COLORS.text,
     marginBottom: 20,
   },
