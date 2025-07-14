@@ -37,7 +37,7 @@ export default function Page() {
     >
       <View style={styles.container}>
         <Image
-          source={require("@/assets/images/revenue-i3.png")}
+          source={require("@/assets/images/auth1.png")}
           style={styles.illustration}
         />
 

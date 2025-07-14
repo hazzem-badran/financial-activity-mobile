@@ -31,7 +31,7 @@ const VerifyEmail = ({
     >
       <View style={styles.container}>
         <Image
-          source={require("@/assets/images/revenue-i2.png")}
+          source={require("@/assets/images/auth3.png")}
           style={styles.illustration}
         />
         <Text style={styles.title}>Verify your email</Text>
