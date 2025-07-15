@@ -36,11 +36,7 @@ export default function Create() {
         {/* TYPE SELECTOR */}
         <ActivityTypeToggle isExpense={isExpense} setIsExpense={setIsExpense} />
 
-        {/* TITLE CONTAINER */}
-        <Text style={styles.sectionTitle}>
-          <Ionicons name="pricetag-outline" size={16} color={COLORS.text} />
-          Category
-        </Text>
+        
 
         <CategorySelector
           categories={CATEGORIES}

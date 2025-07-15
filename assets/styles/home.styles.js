@@ -23,10 +23,11 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
+    gap: 15,
   },
   headerLogo: {
-    width: 75,
-    height: 75,
+    width: 50,
+    height: 50,
   },
   welcomeContainer: {
     flex: 1,
@@ -258,6 +259,7 @@ export const styles = StyleSheet.create({
   },
   transactionsList: {
     flex: 1,
+    paddingHorizontal: 20,
   },
   transactionsListContent: {
     paddingHorizontal: 20,

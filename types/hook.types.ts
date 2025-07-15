@@ -4,7 +4,7 @@ export interface CreateActivityForm {
   title: string;
   amount: string;
   category: Category['name'];
-  isExpense: boolean;
+  isExpense?: boolean;
 }
 
 export interface UseCreateActivityReturn {

@@ -24,7 +24,7 @@ const ActivitiesItem = ({ item, onDelete }: ActivitiesItemProps) => {
   
   // console.log("item:", item);
 
-  const isIncome = parseFloat(item.amount) > 0;
+  const isIncome = parseFloat(item.amount || "0") > 0;
   const iconName = CATEGORY_ICONS[item.category as Category] || "ellipsis-horizontal";
   
   // console.log("Category:", item.category, "Icon:", iconName);
@@ -41,7 +41,7 @@ const ActivitiesItem = ({ item, onDelete }: ActivitiesItemProps) => {
         </View>
         <View style={styles.transactionRight}>
           <Text style={[styles.transactionAmount,{color: isIncome? COLORS.income: COLORS.expense}]}>
-            {isIncome ? "+" : "-"}${Math.abs(parseFloat(item.amount)).toFixed(2)}
+            {isIncome ? "+" : "-"}${Math.abs(parseFloat(item.amount || "0")).toFixed(2)}
           </Text>
           <Text style={styles.transactionDate}>{formatDate(item.created_at)}</Text>
         </View>

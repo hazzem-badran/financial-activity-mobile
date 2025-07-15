@@ -43,7 +43,7 @@ export default function Page() {
         <View style={styles.header}>
           <View style={styles.headerLeft}>
             <Image
-              source={require("@/assets/images/logo.png")}
+              source={require("@/assets/images/carts.png")}
               style={styles.headerLogo}
               resizeMode="contain"
             />
@@ -67,7 +67,7 @@ export default function Page() {
         <View style={styles.transactionsHeaderContainer}>
           <Text style={styles.sectionTitle}>Recent Transactions</Text>
         </View>
-      </View>
+    </View>
 
       <FlatList
         style={styles.transactionsList}

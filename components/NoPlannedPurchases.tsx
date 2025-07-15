@@ -1,12 +1,14 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import { styles } from "@/assets/styles/home.styles";
 import { Ionicons } from "@expo/vector-icons";
+import { styles } from "@/assets/styles/home.styles";
 import { COLORS } from "@/constants/colors";
-import { useRouter } from "expo-router";
 
-const NoActivitiesFond = () => {
-  const router = useRouter();
+interface NoPlannedPurchasesProps {
+  focusInput: () => void;
+}
+
+const NoPlannedPurchases = ({ focusInput }: NoPlannedPurchasesProps) => {
   return (
     <View style={styles.emptyState}>
       <Ionicons
@@ -16,20 +18,17 @@ const NoActivitiesFond = () => {
         color={COLORS.textLight}
       />
 
-      <Text style={styles.emptyStateTitle}>No Activities Yet</Text>
+      <Text style={styles.emptyStateTitle}>No Planned Purchases Yet</Text>
       <Text style={styles.emptyStateText}>
-        Start tracking yout finaces by adding your first Activities
+        Start planning ahead by adding items you want to buy
       </Text>
 
-      <TouchableOpacity
-        style={styles.emptyStateButton}
-        onPress={() => router.push("/create")}
-      >
+      <TouchableOpacity style={styles.emptyStateButton} onPress={focusInput}>
         <Ionicons name="add-circle" size={18} color={COLORS.white} />
-        <Text style={styles.emptyStateButtonText}>Add Activities</Text>
+        <Text style={styles.emptyStateButtonText}>Add Purchases</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-export default NoActivitiesFond;
+export default NoPlannedPurchases;

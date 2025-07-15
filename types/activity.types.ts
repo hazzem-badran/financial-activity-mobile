@@ -3,7 +3,7 @@ export interface Activity {
   id: number;
   userId: string;
   title: string;
-  amount: string;
+  amount?: string;
   category: string
   created_at: string;
 
