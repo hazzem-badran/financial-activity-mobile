@@ -39,6 +39,7 @@ export const styles = StyleSheet.create({
   card: {
     backgroundColor: COLORS.card,
     margin: 16,
+    paddingTop: 40,
     borderRadius: 16,
     padding: 16,
     shadowColor: "#000",
@@ -129,6 +130,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 10,
+    marginBottom: 20,
   },
   categoryButton: {
     flexDirection: "row",

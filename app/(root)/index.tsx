@@ -1,70 +1,41 @@
-import { SignOutButton } from "@/components/SignOutButton";
-import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
-import { Link } from "expo-router";
-import { Alert, FlatList, Image, RefreshControl, Text, View } from "react-native";
 import { styles } from "@/assets/styles/home.styles";
-import BalanceCard from "@/components/BalanceCard";
-import { useActivities } from "@/Hook/useActivities";
 import ActivitiesItem from "@/components/ActivitiesItem";
-import { use, useEffect, useState } from "react";
-import PageLoader from "@/components/PageLoader";
+import BalanceCard from "@/components/BalanceCard";
 import NoActivitiesFond from "@/components/NoActivitiesFond";
+import PageLoader from "@/components/PageLoader";
+import { useActivities } from "@/Hook/useActivities";
+import { useUser } from "@clerk/clerk-expo";
+import { useFocusEffect, useGlobalSearchParams } from "expo-router";
+import React, { useCallback } from "react";
+import { FlatList, Image, RefreshControl, Text, View } from "react-native";
 
 export default function Page() {
   const { user } = useUser();
-  const [refreshing, setRefreshing] = useState(false);
+  const { newActivity } = useGlobalSearchParams();
 
   const {
     activities,
     isLoading,
+    refreshing,
     summary,
-    deleteActivity,
     loadData,
+    handleDelete,
+    onRefresh
   } = useActivities(user?.id || "");
 
-  useEffect(() => {
-    if (user?.id) {
-      loadData();
-    }
-  }, [user?.id, loadData]);
+  useFocusEffect(
+    useCallback(() => {
+      if (user?.id) {
+        if (!activities.length || newActivity === 'true') {
+          loadData();
+        }
+      }
+    }, [user?.id, newActivity, activities.length])
+  );
 
   if (!user?.id || (isLoading && !refreshing)) {
     return <PageLoader />;
-  }
-
-  const handleDelete = (id: string) => {
-    Alert.alert(
-      "Delete Activity",
-      "Are you sure you want to delete this activity?",
-      [
-        {
-          text: "Cancel",
-          style: "cancel",
-        },
-        {
-          text: "Delete",
-          style: "destructive",
-          onPress: () => deleteActivity(id),
-        },
-      ]
-    );
   };
-
-  const onRefresh = async () => {
-    setRefreshing(true);
-    try {
-      await loadData();
-    } catch (error) {
-      console.error("Error refreshing data:", error);
-      Alert.alert("Error", "Failed to refresh data");
-    } finally {
-      setRefreshing(false);
-    }
-  };
-
-  // console.log("userId:", user?.id);
-  // console.log("activities:", activities);
-  // console.log("summary:", summary);
 
   return (
     <View style={styles.container}>
@@ -81,7 +52,7 @@ export default function Page() {
               <Text style={styles.welcomeText}>Welcome</Text>
 
               <Text style={styles.usernameText}>
-                Hello{" "}
+                
                 {user?.firstName ||
                   user?.username ||
                   user?.emailAddresses[0]?.emailAddress.split("@")[0] ||

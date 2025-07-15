@@ -6,6 +6,7 @@ import { Alert } from "react-native";
 export const useActivities = (userId: string): UseActivitiesReturn => {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
   const [summary, setSummary] = useState<Summary>({
     income: "0",
     expenses: "0",
@@ -87,12 +88,45 @@ export const useActivities = (userId: string): UseActivitiesReturn => {
     }
   };
 
+  const handleDelete = (id: string) => {
+    Alert.alert(
+      "Delete Activity",
+      "Are you sure you want to delete this activity?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+        {
+          text: "Delete",
+          style: "destructive",
+          onPress: () => deleteActivity(id),
+        },
+      ]
+    );
+  };
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    try {
+      await loadData();
+    } catch (error) {
+      console.error("Error refreshing data:", error);
+      Alert.alert("Error", "Failed to refresh data");
+    } finally {
+      setRefreshing(false);
+    }
+  };
+
   return {
     activities,
     isLoading,
+    refreshing,
     summary,
     loadData,
     deleteActivity,
+    handleDelete,
+    onRefresh,
     fetchActivities,
     fetchSummary,
   };
