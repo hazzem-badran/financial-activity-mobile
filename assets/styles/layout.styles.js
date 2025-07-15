@@ -9,16 +9,16 @@ export const styles = StyleSheet.create({
   },
   sideMenuHeader: {
     backgroundColor: COLORS.primary,
-    paddingVertical: 45,
+    paddingVertical: 65,
     paddingHorizontal: 20,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 10,
   },
   headerLogo: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: 40,
+    height: 40,
+    // borderRadius: 40,
     marginBottom: 10,
   },
   headerTitle: {

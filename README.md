@@ -1,8 +1,33 @@
-# Welcome to your Expo app 👋
+# Financial Activity App 📱💰
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern mobile application built with Expo and React Native for managing personal finances and tracking financial activities.
 
-## Get started
+## Features ✨
+
+- 🔐 Secure authentication with Clerk
+- 💰 Track income and expenses
+- 📊 View financial summaries and balances
+- 🛒 Plan future purchases
+- 📱 Beautiful and responsive UI
+- ⚡ Real-time updates
+- 🔄 Offline support
+
+## Technologies Used 🛠
+
+- [Expo](https://expo.dev) - React Native development framework
+- [Clerk](https://clerk.dev) - Authentication and user management
+- [React Navigation](https://reactnavigation.org) - Navigation system
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe development
+- [Expo Router](https://docs.expo.dev/router/introduction/) - File-based routing
+
+## Prerequisites 📋
+
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Expo CLI](https://docs.expo.dev/workflow/expo-cli/)
+
+## Get started 🚀
 
 1. Install dependencies
 
@@ -16,35 +41,43 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Development Options 💻
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+You can run the app on:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- 📱 [Expo Go](https://expo.dev/go) - Quick testing and development
+- 🤖 [Android Emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- 🍎 [iOS Simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- 🛠 [Development Build](https://docs.expo.dev/develop/development-builds/introduction/)
 
-## Get a fresh project
+## Project Structure 📁
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/               # Application screens and navigation
+├── (auth)/       # Authentication related screens
+└── (root)/       # Main app screens
+assets/           # Static assets (images, fonts, styles)
+components/       # Reusable UI components
+constants/        # App constants and configurations
+Hook/             # Custom React hooks
+types/            # TypeScript type definitions
+utils/            # Utility functions
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Contributing 🤝
 
-## Learn more
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-To learn more about developing your project with Expo, look at the following resources:
+## Learn More 📚
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Documentation](https://reactnative.dev/)
+- [Clerk Documentation](https://clerk.dev/docs)
 
-## Join the community
+## Support 💪
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+If you have any questions or need help, please open an issue in the repository or contact the development team.

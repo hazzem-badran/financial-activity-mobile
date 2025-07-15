@@ -14,7 +14,7 @@ function CustomDrawerContent(props: any) {
       {/* Header with Image */}
       <View style={styles.sideMenuHeader}>
         <Image 
-          source={require("@/assets/images/logo.png")} 
+          source={require("@/assets/images/carts2.png")} 
           style={styles.headerLogo}
           resizeMode="contain"
         />

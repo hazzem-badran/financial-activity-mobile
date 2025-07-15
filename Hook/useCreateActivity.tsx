@@ -1,5 +1,8 @@
 import { API_URL } from "@/constants/api";
-import { CreateActivityForm, UseCreateActivityReturn } from "@/types/createActivity.types";
+import {
+  CreateActivityForm,
+  UseCreateActivityReturn,
+} from "@/types/createActivity.types";
 import { useUser } from "@clerk/clerk-expo";
 import { useRouter } from "expo-router";
 import { useState } from "react";
@@ -10,9 +13,14 @@ export const useCreateActivity = (): UseCreateActivityReturn => {
   const { user } = useUser();
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<CreateActivityForm['category'] | undefined>(undefined);
+  const [selectedCategory, setSelectedCategory] = useState<
+    CreateActivityForm["category"] | undefined
+  >(undefined);
   const [isExpense, setIsExpense] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+
+  
+  
   const handleCreate = async () => {
     //validations
     if (!title.trim())
