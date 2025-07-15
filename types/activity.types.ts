@@ -30,9 +30,12 @@ export interface ActivitiesResponse {
 export interface UseActivitiesReturn {
   activities: Activity[];
   isLoading: boolean;
+  refreshing: boolean;
   summary: Summary;
   loadData: () => Promise<void>;
   deleteActivity: (id: string) => Promise<void>;
+  handleDelete: (id: string) => void;
+  onRefresh: () => Promise<void>;
   fetchActivities: () => Promise<void>;
   fetchSummary: () => Promise<void>;
 }
