@@ -1,7 +1,7 @@
 import { API_URL } from "@/constants/api";
 import {
-  CreateActivityForm,
-  UseCreateActivityReturn,
+    CreateActivityForm,
+    UseCreateActivityReturn,
 } from "@/types/createActivity.types";
 import { useUser } from "@clerk/clerk-expo";
 import { useRouter } from "expo-router";
@@ -24,7 +24,7 @@ export const useCreateActivity = (): UseCreateActivityReturn => {
   const handleCreate = async () => {
     //validations
     if (!title.trim())
-      return Alert.alert("Error", "Please enter a transaction title");
+      return Alert.alert("Error", "Please enter an activity title");
     if (!amount || isNaN(parseFloat(amount)) || parseFloat(amount) < 0) {
       Alert.alert("Error", "Please enter a vaild amount");
       return;
@@ -53,13 +53,13 @@ export const useCreateActivity = (): UseCreateActivityReturn => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to create transaction");
+        throw new Error(errorData.error || "Failed to create activity");
       }
       setTitle("");
       setAmount("");
       setSelectedCategory(undefined);
       setIsExpense(true);
-      Alert.alert("Success", "Transaction created successfully");
+      Alert.alert("Success", "Activity created successfully");
       router.push({
         pathname: "/",
         params: { newActivity: "true" },
@@ -67,7 +67,7 @@ export const useCreateActivity = (): UseCreateActivityReturn => {
     } catch (error) {
       Alert.alert(
         "Error",
-        error instanceof Error ? error.message : "Failed to create transaction"
+        error instanceof Error ? error.message : "Failed to create activity"
       );
     } finally {
       setIsLoading(false);

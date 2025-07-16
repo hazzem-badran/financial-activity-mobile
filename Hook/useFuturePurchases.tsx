@@ -19,7 +19,7 @@ export const useFuturePurchases = (userId: string | undefined): UseFuturePurchas
     setIsLoading(true);
     if (!title.trim()) {
       setIsLoading(false);
-      return Alert.alert("Error", "Please enter a transaction title");
+      return Alert.alert("Error", "Please enter an activity title");
     }
 
     if (!selectedCategory) {
@@ -27,7 +27,7 @@ export const useFuturePurchases = (userId: string | undefined): UseFuturePurchas
       return Alert.alert("Error", "Please select a category");
     }
     setIsLoading(false);
-    Alert.alert("Success", "Transaction created successfully");
+    Alert.alert("Success", "Activity created successfully");
 
     try {
       const response = await fetch(`${API_URL}/future-purchases`, {
@@ -44,14 +44,14 @@ export const useFuturePurchases = (userId: string | undefined): UseFuturePurchas
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to create transaction");
+        throw new Error(errorData.error || "Failed to create activity");
       }
 
       setTitle("");
       setSelectedCategory(undefined);
       fetchPurchases();
     } catch (error) {
-      Alert.alert("Error", "Failed to create transaction");
+      Alert.alert("Error", "Failed to create activity");
     } finally {
       setIsLoading(false);
 
@@ -73,7 +73,6 @@ export const useFuturePurchases = (userId: string | undefined): UseFuturePurchas
         throw new Error("Failed to fetch purchases");
       }
       const result = await response.json();
-      console.log(result);
       setPurchases(result);
     } catch (error) {
       console.error("Error fetching purchases:", error);
@@ -96,13 +95,13 @@ export const useFuturePurchases = (userId: string | undefined): UseFuturePurchas
       }
     } catch (error) {
       console.error("Error deleting purchase:", error);
-      Alert.alert("Error", "Failed to delete transaction");
+      Alert.alert("Error", "Failed to delete activity");
     } finally {
       setIsLoading(false);
     }
   };
   const handleDelete = (id: string) => {
-    Alert.alert("Delete", "Are you sure you want to delete this transaction?", [
+    Alert.alert("Delete", "Are you sure you want to delete this activity?", [
       {
         text: "Cancel",
         style: "cancel",
@@ -113,7 +112,7 @@ export const useFuturePurchases = (userId: string | undefined): UseFuturePurchas
           setPurchases((prev) =>
             prev.filter((item) => item.id.toString() !== id)
           );
-          Alert.alert("Success", "Transaction deleted successfully");
+          Alert.alert("Success", "Activity deleted successfully");
           deletePurchase(id);
         },
       },

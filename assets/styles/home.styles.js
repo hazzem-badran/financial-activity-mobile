@@ -134,7 +134,7 @@ export const styles = StyleSheet.create({
     color: COLORS.text,
     marginBottom: 15,
   },
-  transactionCard: {
+  activityCard: {
     backgroundColor: COLORS.card,
     borderRadius: 12,
     marginBottom: 10,
@@ -149,7 +149,7 @@ export const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 2,
   },
-  transactionContent: {
+  activityContent: {
     flex: 1,
     flexDirection: "row",
     padding: 15,
@@ -164,28 +164,28 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginRight: 12,
   },
-  transactionLeft: {
+  activityLeft: {
     flex: 1,
   },
-  transactionTitle: {
+  activityTitle: {
     fontSize: 16,
     fontWeight: "500",
     color: COLORS.text,
     marginBottom: 4,
   },
-  transactionCategory: {
+  activityCategory: {
     fontSize: 14,
     color: COLORS.textLight,
   },
-  transactionRight: {
+  activityRight: {
     alignItems: "flex-end",
   },
-  transactionAmount: {
+  activityAmount: {
     fontSize: 16,
     fontWeight: "600",
     marginBottom: 4,
   },
-  transactionDate: {
+  activityDate: {
     fontSize: 12,
     color: COLORS.textLight,
   },
@@ -194,7 +194,7 @@ export const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderLeftColor: COLORS.border,
   },
-  transactionsContainer: {
+  activitiesContainer: {
     marginBottom: 20,
   },
   loadingContainer: {
@@ -250,18 +250,18 @@ export const styles = StyleSheet.create({
     fontWeight: "600",
     marginLeft: 6,
   },
-  transactionsHeaderContainer: {
+  activitiesHeaderContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 10,
     paddingBottom: 5,
   },
-  transactionsList: {
+  activitiesList: {
     flex: 1,
     paddingHorizontal: 20,
   },
-  transactionsListContent: {
+  activitiesListContent: {
     paddingHorizontal: 20,
     paddingBottom: 20,
   },

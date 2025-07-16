@@ -25,6 +25,9 @@ A modern mobile application built with Expo and React Native for managing person
 ## App Screenshots
 
 <p align="center">
+  <img src="./assets/images/screenshots/app5.png" width="22%" style="margin: 0 1%;"/>
+  <img src="./assets/images/screenshots/app6.png" width="22%" style="margin: 0 1%;"/>
+  <img src="./assets/images/screenshots/app7.png" width="22%" style="margin: 0 1%;"/>
   <img src="./assets/images/screenshots/app1.png" width="22%" style="margin: 0 1%;"/>
   <img src="./assets/images/screenshots/app2.png" width="22%" style="margin: 0 1%;"/>
   <img src="./assets/images/screenshots/app3.png" width="22%" style="margin: 0 1%;"/>

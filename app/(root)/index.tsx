@@ -64,13 +64,13 @@ export default function Page() {
 
         <BalanceCard summary={summary} />
 
-        <View style={styles.transactionsHeaderContainer}>
-          <Text style={styles.sectionTitle}>Recent Transactions</Text>
+        <View style={styles.activitiesHeaderContainer}>
+          <Text style={styles.sectionTitle}>Recent Activities</Text>
         </View>
     </View>
 
       <FlatList
-        style={styles.transactionsList}
+        style={styles.activitiesList}
         data={activities}
         keyExtractor={(item) => item?.id?.toString()}
         renderItem={({ item }) => (

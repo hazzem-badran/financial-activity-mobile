@@ -1,18 +1,16 @@
+import { useSignUpForm } from "@/Hook/useSignUpForm";
 import { styles } from "@/assets/styles/auth.styles";
+import AuthButton from "@/components/AuthButton";
 import AuthError from "@/components/AuthError";
+import AuthInput from "@/components/AuthInput";
 import VerifyEmail from "@/components/VerifyEmail";
 import { Link } from "expo-router";
 import {
-  Image,
-  ScrollView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+    Image,
+    ScrollView,
+    Text,
+    View,
 } from "react-native";
-import { useSignUpForm } from "@/Hook/useSignUpForm";
-import AuthButton from "@/components/AuthButton";
-import AuthInput from "@/components/AuthInput";
 
 export default function SignUpScreen() {
   const {

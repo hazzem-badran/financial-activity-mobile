@@ -5,10 +5,8 @@ import AuthButton from "@/components/AuthButton";
 import CategorySelector from "@/components/CategorySelector";
 import InputContainer from "@/components/InputContainer";
 import { CATEGORIES } from "@/constants/categories";
-import { COLORS } from "@/constants/colors";
 import { useCreateActivity } from "@/Hook/useCreateActivity";
-import { Ionicons } from "@expo/vector-icons";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 export default function Create() {
   const {

@@ -29,26 +29,9 @@ const AuthInput = ({ error, ...props }: AuthInputProps) => {
         ]}
         autoCapitalize="none" 
         {...props} 
-        // استخدام spread operator بدلاً من كتابة كل prop منفرد - أكثر احترافية وأقل تكراراً
       />
     </Animated.View>
   );
 };
 
 export default AuthInput;
-
-/*
-
-const AuthInput = ({ value, placeholder, onChangeText, error, secureTextEntry }: AuthInputProps) => {
-  return (
-    <TextInput
-      style={[styles.input, error && styles.errorInput]}
-      autoCapitalize="none"
-      value={value}
-      placeholder={placeholder}
-      onChangeText={onChangeText}
-      secureTextEntry={secureTextEntry}
-    />
-  );
-};
-*/

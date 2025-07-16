@@ -56,7 +56,7 @@ export default function FuturePurchases() {
       </View>
 
       <FlatList
-        style={stylesHome.transactionsList}
+        style={stylesHome.activitiesList}
         data={purchases}
         keyExtractor={(item) => item?.id?.toString()}
         renderItem={({ item }) => (

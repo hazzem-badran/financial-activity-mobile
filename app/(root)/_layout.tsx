@@ -21,14 +21,9 @@ function CustomDrawerContent(props: any) {
         <Text style={styles.headerTitle}>Financial App</Text>
       </View>
       
-      {/* Drawer Items */}
       <View style={styles.menuItemsContainer}>
         <DrawerItemList {...props} />
-        
-        {/* Sign Out Button */}
-        {/* <View style={styles.signOutButtonContainer}> */}
-          <SignOutButton />
-        {/* </View> */}
+        <SignOutButton />
       </View>
     </View>
   );

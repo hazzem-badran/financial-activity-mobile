@@ -19,7 +19,7 @@ const InputContainer: React.ForwardRefRenderFunction<TextInput, InputContainerPr
         <TextInput
           ref={ref}
           style={styles.input}
-          placeholder="Transaction Title"
+          placeholder="Activity Title"
           placeholderTextColor={COLORS.textLight}
           value={title}
           onChangeText={setTitle}

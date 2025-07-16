@@ -1,17 +1,15 @@
+import { useSignInForm } from "@/Hook/useSignInForm";
 import { styles } from "@/assets/styles/auth.styles";
+import AuthButton from "@/components/AuthButton";
 import AuthError from "@/components/AuthError";
+import AuthInput from "@/components/AuthInput";
 import { Link } from "expo-router";
 import {
   Image,
   ScrollView,
   Text,
-  TextInput,
-  TouchableOpacity,
   View,
 } from "react-native";
-import { useSignInForm } from "@/Hook/useSignInForm";
-import AuthButton from "@/components/AuthButton";
-import AuthInput from "@/components/AuthInput";
 
 export default function Page() {
   const {
@@ -65,7 +63,7 @@ export default function Page() {
         />
 
         <View style={styles.footerContainer}>
-          <Text style={styles.footerText}>Don't have an account?</Text>
+          <Text style={styles.footerText}>Don&apos;t have an account?</Text>
           <Link href="/sign-up" asChild>
             <Text style={styles.linkText}>Sign up</Text>
           </Link>

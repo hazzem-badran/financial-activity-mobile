@@ -38,7 +38,7 @@ const VerifyEmail = ({
         <Text
           style={[styles.footerText, { marginBottom: 20, textAlign: "center" }]}
         >
-          We've sent a verification code to your email address. Please enter it
+          We&apos;ve sent a verification code to your email address. Please enter it
           below to continue.
         </Text>
         {error && <AuthError error={error} setError={setError} />}

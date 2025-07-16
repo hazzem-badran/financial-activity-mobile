@@ -12,12 +12,8 @@ export const SignOutButton = () => {
   const handleSignOut = async () => {
     try {
       await signOut();
-      // Navigate to auth after successful sign out
       router.replace("/(auth)/sign-in");
-      console.log("Sign out successful");
     } catch (err) {
-      // See https://clerk.com/docs/custom-flows/error-handling
-      // for more info on error handling
       console.error("Sign out error:", JSON.stringify(err, null, 2));
     }
   };
