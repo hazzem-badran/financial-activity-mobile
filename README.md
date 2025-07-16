@@ -20,9 +20,21 @@ A modern mobile application built with Expo and React Native for managing person
 - [TypeScript](https://www.typescriptlang.org/) - Type-safe development
 - [Expo Router](https://docs.expo.dev/router/introduction/) - File-based routing
 
+
+
+## App Screenshots
+
+<p align="center">
+  <img src="./assets/images/screenshots/app1.png" width="22%" style="margin: 0 1%;"/>
+  <img src="./assets/images/screenshots/app2.png" width="22%" style="margin: 0 1%;"/>
+  <img src="./assets/images/screenshots/app3.png" width="22%" style="margin: 0 1%;"/>
+  <img src="./assets/images/screenshots/app4.png" width="22%" style="margin: 0 1%;"/>
+</p>
+
 ## Prerequisites 📋
 
 Before you begin, ensure you have the following installed:
+
 - [Node.js](https://nodejs.org/) (version 14 or higher)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - [Expo CLI](https://docs.expo.dev/workflow/expo-cli/)

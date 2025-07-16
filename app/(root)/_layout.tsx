@@ -55,7 +55,7 @@ export default function Layout() {
           name="index"
           options={{
             drawerLabel: "Home",
-            title: "My Home",
+            title: "Home",
             drawerIcon: ({ color, size }: { color: string; size: number }) => (
               <Ionicons name="home" size={size} color={color} />
             ),
