@@ -2,6 +2,11 @@
 
 A modern mobile application built with Expo and React Native for managing personal finances and tracking financial activities.
 
+
+<div style="display: flex; flex-direction: 'row';">
+<img src="./assets/images/screenshots/thumbnail.png"  height=30%>
+</div>
+
 ## Features ✨
 
 - 🔐 Secure authentication with Clerk
