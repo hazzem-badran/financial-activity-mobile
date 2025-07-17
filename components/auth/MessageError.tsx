@@ -1,4 +1,4 @@
-import { COLORS } from "@/app/theme/colors";
+import { COLORS } from "@/theme/colors";
 import { styles } from "@/styles/auth.styles";
 import { IAuthErrorProps } from "@/types";
 import { Ionicons } from "@expo/vector-icons";

@@ -1,4 +1,4 @@
-import { COLORS } from "@/app/theme/colors";
+import { COLORS } from "@/theme/colors";
 import { useClerk } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";

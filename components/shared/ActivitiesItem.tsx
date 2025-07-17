@@ -1,5 +1,5 @@
-import { COLORS } from "@/app/theme/colors";
 import { styles } from "@/styles/home.styles";
+import { COLORS } from "@/theme/colors";
 import { IActivitiesItemProps } from "@/types/activity.types";
 import { formatDate } from "@/utils/formatDate";
 import { Ionicons } from "@expo/vector-icons";

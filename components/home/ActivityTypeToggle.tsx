@@ -1,5 +1,5 @@
-import { COLORS } from "@/app/theme/colors";
 import { styles } from "@/styles/create.styles";
+import { COLORS } from "@/theme/colors";
 import { ACTIVITY_TYPES, IActivityTypeToggleProps } from "@/types";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";

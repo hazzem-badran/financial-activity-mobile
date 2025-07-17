@@ -1,5 +1,5 @@
-import { COLORS } from "@/app/theme/colors";
 import { styles } from "@/styles/create.styles";
+import { COLORS } from "@/theme/colors";
 import { IAmountContainerProps } from "@/types";
 import React from "react";
 import { Text, TextInput, View } from "react-native";

@@ -1,5 +1,5 @@
-import { COLORS } from "@/app/theme/colors";
 import { styles } from "@/styles/home.styles";
+import { COLORS } from "@/theme/colors";
 import React from "react";
 import { Text, View } from "react-native";
 

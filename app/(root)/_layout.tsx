@@ -1,6 +1,6 @@
-import { COLORS } from "@/app/theme/colors";
-import { styles } from "@/styles/layout.styles";
 import { SignOutButton } from "@/components/layout";
+import { styles } from "@/styles/layout.styles";
+import { COLORS } from "@/theme/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { DrawerItemList } from "@react-navigation/drawer";
 import { Drawer } from "expo-router/drawer";
