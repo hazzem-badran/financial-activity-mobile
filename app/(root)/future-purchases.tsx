@@ -1,12 +1,10 @@
-import { styles } from "@/assets/styles/create.styles";
-import { styles as stylesHome } from "@/assets/styles/home.styles";
-import ActivitiesItem from "@/components/ActivitiesItem";
-import AuthButton from "@/components/AuthButton";
-import CategorySelector from "@/components/CategorySelector";
-import InputContainer from "@/components/InputContainer";
-import NoPlannedPurchases from "@/components/NoPlannedPurchases";
+import { NoPlannedPurchases } from "@/components/purchases";
+import { ActivitiesItem, Button, CategorySelector } from "@/components/shared";
+import AmountInput from "@/components/shared/AmountInput";
 import { CATEGORIES_EXPENSE } from "@/constants/categories";
-import { useFuturePurchases } from "@/Hook/useFuturePurchases";
+import { useFuturePurchases } from "@/hooks";
+import { styles } from "@/styles/create.styles";
+import { styles as stylesHome } from "@/styles/home.styles";
 import { useUser } from "@clerk/clerk-expo";
 import { useEffect, useRef } from "react";
 import { FlatList, RefreshControl, TextInput, View } from "react-native";
@@ -18,9 +16,9 @@ export default function FuturePurchases() {
   
   const {
     title,
-    setTitle,
+    handleChangeTitle,
     selectedCategory,
-    setSelectedCategory,
+    handleChangeSelectedCategory,
     isLoading,
     handleCreate,
     purchases,
@@ -32,7 +30,9 @@ export default function FuturePurchases() {
 
 
   useEffect(() => {
-    fetchPurchases();
+    if (user?.id) {
+      fetchPurchases();
+    }
   }, [user?.id]);
 
 
@@ -44,15 +44,15 @@ export default function FuturePurchases() {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        {/* INPUT CONTAINER */}
-        <InputContainer ref={inputRef} title={title} setTitle={setTitle} />
+        {/* Amount CONTAINER */}
+        <AmountInput ref={inputRef} title={title} changeTitle={handleChangeTitle} />
 
         <CategorySelector
           categories={CATEGORIES_EXPENSE}
           selectedCategory={selectedCategory}
-          onSelectCategory={setSelectedCategory}
+          onSelectCategory={handleChangeSelectedCategory}
         />
-        <AuthButton title="Save" onPress={handleCreate} isLoading={isLoading} />
+        <Button title="Save" onPress={handleCreate} isLoading={isLoading} />
       </View>
 
       <FlatList
@@ -63,12 +63,13 @@ export default function FuturePurchases() {
           <ActivitiesItem
             item={item}
             onDelete={() => handleDelete(item.id.toString())}
+            showPrice={true}
           />
         )}
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={<NoPlannedPurchases focusInput={focusInput} />}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh}  />
         }
       />
     </View>

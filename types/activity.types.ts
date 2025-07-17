@@ -1,5 +1,5 @@
 // Activity related types
-export interface Activity {
+export interface IActivity {
   id: number;
   userId: string;
   title: string;
@@ -9,29 +9,30 @@ export interface Activity {
 
 }
 
-export interface ActivitiesItemProps {
-  item: Activity;
+export interface IActivitiesItemProps {
+  item: IActivity;
   onDelete: (id: string) => void;
+  showPrice?: boolean;
 }
 
 // Summary data structure
-export interface Summary {
+export interface ISummary {
   income: string;
   expenses: string;
   balance: string;
 }
 
 // Activities API response
-export interface ActivitiesResponse {
-  activities: Activity[];
+export interface IActivitiesResponse {
+  activities: IActivity[];
 }
 
 // Hook return type
-export interface UseActivitiesReturn {
-  activities: Activity[];
+export interface IUseActivitiesReturn {
+  activities: IActivity[];
   isLoading: boolean;
   refreshing: boolean;
-  summary: Summary;
+  summary: ISummary;
   loadData: () => Promise<void>;
   deleteActivity: (id: string) => Promise<void>;
   handleDelete: (id: string) => void;

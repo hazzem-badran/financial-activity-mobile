@@ -1,23 +1,16 @@
-import { useSignUpForm } from "@/Hook/useSignUpForm";
-import { styles } from "@/assets/styles/auth.styles";
-import AuthButton from "@/components/AuthButton";
-import AuthError from "@/components/AuthError";
-import AuthInput from "@/components/AuthInput";
-import VerifyEmail from "@/components/VerifyEmail";
+import { styles } from "@/styles/auth.styles";
+import { MessageError,VerifyEmail } from "@/components/auth";
+import { Button, InputField } from "@/components/shared";
+import { useSignUpForm } from "@/hooks/useSignUpForm";
 import { Link } from "expo-router";
-import {
-    Image,
-    ScrollView,
-    Text,
-    View,
-} from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 
 export default function SignUpScreen() {
   const {
     emailAddress,
-    setEmailAddress,
+    handleChangeEmail,
     password,
-    setPassword,
+    handleChangePassword,
     pendingVerification,
     code,
     setCode,
@@ -43,12 +36,8 @@ export default function SignUpScreen() {
 
   return (
     <ScrollView
-      style={{ flex: 1 }}
-      contentContainerStyle={{
-        flexGrow: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      style={styles.flex}
+      contentContainerStyle={styles.contentContainer}
       keyboardShouldPersistTaps="handled"
     >
       <View style={styles.container}>
@@ -58,21 +47,21 @@ export default function SignUpScreen() {
         />
 
         <Text style={styles.title}>Create Account</Text>
-        {error && <AuthError error={error} setError={setError} />}
-        <AuthInput
+        {error && <MessageError error={error} setError={setError} />}
+        <InputField
           value={emailAddress}
           placeholder="Enter email"
-          onChangeText={setEmailAddress}
+          onChangeText={handleChangeEmail}
         />
 
-        <AuthInput
+        <InputField
           value={password}
           placeholder="Enter password"
           secureTextEntry={true}
-          onChangeText={setPassword}
+          onChangeText={handleChangePassword}
         />
 
-        <AuthButton
+        <Button
           title="Continue"
           onPress={onSignUpPress}
           isLoading={isLoading}

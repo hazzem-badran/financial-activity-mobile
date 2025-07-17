@@ -1,13 +1,13 @@
-import { Activity } from "./activity.types";
-import { CreateActivityForm } from "./hook.types";
+import { IActivity } from "./activity.types";
+import { ICreateActivityForm } from "./hook.types";
 
-export interface UseFuturePurchasesReturn {
+export interface IUseFuturePurchasesReturn {
   title: string;
-  setTitle: (title: string) => void;
-  selectedCategory: CreateActivityForm["category"] | undefined;
-  setSelectedCategory: (category: CreateActivityForm["category"]) => void;
+  handleChangeTitle: (title: string) => void;
+  selectedCategory: ICreateActivityForm["category"] | undefined;
+  handleChangeSelectedCategory: (category: ICreateActivityForm["category"]) => void;
   isLoading: boolean;
-  purchases: Activity[];
+  purchases: IActivity[];
   refreshing: boolean;
   handleCreate: () => Promise<void>;
   fetchPurchases: () => Promise<void>;
