@@ -1,5 +1,5 @@
 import { COLORS } from "@/app/theme/colors";
-import { styles } from "@/assets/styles/home.styles";
+import { styles } from "@/styles/home.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import React from "react";

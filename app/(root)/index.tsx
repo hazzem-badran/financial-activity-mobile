@@ -1,7 +1,7 @@
-import { styles } from "@/styles/home.styles";
-import { NoActivitiesFound , BalanceCard } from "@/components/home";
+import { BalanceCard, NoActivitiesFound } from "@/components/home";
 import { ActivitiesItem, PageLoader } from "@/components/shared";
 import { useActivities } from "@/hooks";
+import { styles } from "@/styles/home.styles";
 import { useUser } from "@clerk/clerk-expo";
 import { useFocusEffect, useGlobalSearchParams } from "expo-router";
 import React, { useCallback } from "react";
@@ -28,7 +28,7 @@ export default function Page() {
           loadData();
         }
       }
-    }, [user?.id, newActivity, activities.length, loadData])
+    }, [user?.id, newActivity, activities.length])
   );
 
   if (!user?.id || (isLoading && !refreshing)) {

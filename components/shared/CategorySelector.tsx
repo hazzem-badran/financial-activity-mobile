@@ -1,5 +1,5 @@
 import { COLORS } from "@/app/theme/colors";
-import { styles } from "@/assets/styles/create.styles";
+import { styles } from "@/styles/create.styles";
 import { ICategorySelectorProps } from "@/types";
 import { Ionicons } from "@expo/vector-icons";
 import { Text, TouchableOpacity, View } from "react-native";

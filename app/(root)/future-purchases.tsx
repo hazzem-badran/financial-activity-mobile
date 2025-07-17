@@ -1,10 +1,10 @@
-import { styles } from "@/styles/create.styles";
-import { styles as stylesHome } from "@/styles/home.styles";
 import { NoPlannedPurchases } from "@/components/purchases";
 import { ActivitiesItem, Button, CategorySelector } from "@/components/shared";
 import AmountInput from "@/components/shared/AmountInput";
 import { CATEGORIES_EXPENSE } from "@/constants/categories";
 import { useFuturePurchases } from "@/hooks";
+import { styles } from "@/styles/create.styles";
+import { styles as stylesHome } from "@/styles/home.styles";
 import { useUser } from "@clerk/clerk-expo";
 import { useEffect, useRef } from "react";
 import { FlatList, RefreshControl, TextInput, View } from "react-native";
@@ -30,8 +30,10 @@ export default function FuturePurchases() {
 
 
   useEffect(() => {
-    fetchPurchases();
-  }, [user?.id, fetchPurchases]);
+    if (user?.id) {
+      fetchPurchases();
+    }
+  }, [user?.id]);
 
 
   const focusInput = () => {

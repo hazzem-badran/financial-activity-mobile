@@ -1,6 +1,6 @@
+import { COLORS } from "@/app/theme/colors";
 import { StyleSheet } from "react-native";
-import { COLORS } from "../../app/theme/colors";
-import { SaveScreen } from "@/components/layout";
+
 
 export const styles = StyleSheet.create({
   flex: {
@@ -47,8 +47,6 @@ export const styles = StyleSheet.create({
   },
   saveScreen: {
     flex: 1,
-    paddingTop: insets.top,
-    paddingBottom: insets.bottom,
     backgroundColor: COLORS.background,
   },
 });

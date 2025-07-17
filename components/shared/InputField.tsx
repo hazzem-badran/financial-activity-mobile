@@ -18,10 +18,13 @@ export const InputField = ({ error, ...props }: IAuthInputProps) => {
         Animated.timing(shakeAnim, { toValue: 0, duration: 100, useNativeDriver: true }),
       ]).start();
     }
-  }, [error, shakeAnim]);
+  }, [error]);
 
   return (
-    <Animated.View style={styles.animatedView}>
+    <Animated.View style={[
+      styles.animatedView,
+      { transform: [{ translateX: shakeAnim }] }
+    ]}>
       <TextInput
         style={[
           styles.input,

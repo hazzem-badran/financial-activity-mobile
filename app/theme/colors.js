@@ -25,10 +25,10 @@ const youthfulDarkTheme = {
 };
 
 
-export const THEMES = {
+export const THEMESS = {
   youthful: youthfulTheme,
   youthfulDarkTheme: youthfulDarkTheme,
 };
 
-// 👇 change this to switch theme
-export const COLORS = THEMES.youthful;
+// 👇 change this to switch themer
+export const COLORS = THEMESS.youthful;

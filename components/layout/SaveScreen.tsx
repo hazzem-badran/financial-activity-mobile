@@ -1,4 +1,3 @@
-import { COLORS } from "@/app/theme/colors";
 import { styles } from "@/styles/layout.styles";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -12,7 +11,13 @@ export const SaveScreen = ({ children }: SaveScreenProps) => {
 
   return (
     <View
-      style={styles.saveScreen}
+      style={[
+        styles.saveScreen,
+        {
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+        }
+      ]}
     >
       {children}
     </View>

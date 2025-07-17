@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   animatedView: {
-    transform: [{ translateX: shakeAnim }],
+    width: '100%',
   },
   contentContainer: {
     flexGrow: 1,
