@@ -1,22 +1,16 @@
-import { useSignInForm } from "@/Hook/useSignInForm";
-import { styles } from "@/assets/styles/auth.styles";
-import AuthButton from "@/components/AuthButton";
-import AuthError from "@/components/AuthError";
-import AuthInput from "@/components/AuthInput";
+import { styles } from "@/styles/auth.styles";
+import { MessageError } from "@/components/auth";
+import { Button, InputField } from "@/components/shared";
+import { useSignInForm } from "@/hooks/useSignInForm";
 import { Link } from "expo-router";
-import {
-  Image,
-  ScrollView,
-  Text,
-  View,
-} from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 
 export default function Page() {
   const {
     emailAddress,
-    setEmailAddress,
+    handleChangeEmail,
     password,
-    setPassword,
+    handleChangePassword,
     error,
     setError,
     onSignInPress,
@@ -25,12 +19,8 @@ export default function Page() {
 
   return (
     <ScrollView
-      style={{ flex: 1 }}
-      contentContainerStyle={{
-        flexGrow: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      style={styles.flex}
+      contentContainerStyle={styles.contentContainer}
       keyboardShouldPersistTaps="handled"
     >
       <View style={styles.container}>
@@ -41,22 +31,22 @@ export default function Page() {
 
         <Text style={styles.title}>Welcome Back</Text>
 
-        {error && <AuthError error={error} setError={setError} />}
+        {error && <MessageError error={error} setError={setError} />}
 
-        <AuthInput
+        <InputField
           value={emailAddress}
           placeholder="Enter email"
-          onChangeText={setEmailAddress}
+          onChangeText={handleChangeEmail}
         />
 
-        <AuthInput
+        <InputField
           value={password}
           placeholder="Enter password"
           secureTextEntry={true}
-          onChangeText={setPassword}
+          onChangeText={handleChangePassword}
         />
 
-        <AuthButton
+        <Button
           title="Continue"
           onPress={onSignInPress}
           isLoading={isLoading}

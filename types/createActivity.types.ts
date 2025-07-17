@@ -1,21 +1,21 @@
 import { Category } from "@/constants/categories";
 
-export interface CreateActivityForm {
+export interface ICreateActivityForm {
   title: string;
   amount: string;
   category: Category['name'];
   isExpense: boolean;
 }
 
-export interface UseCreateActivityReturn {
+export interface IUseCreateActivityReturn {
   title: string;
-  setTitle: (title: string) => void;
+  handleChangeTitle: (title: string) => void;
   amount: string;
-  setAmount: (amount: string) => void;
+  handleChangeAmount: (amount: string) => void;
   selectedCategory: string | undefined;
-  setSelectedCategory: (category: string) => void;
+  handleChangeSelectedCategory: (category: string) => void;
   isExpense: boolean;
-  setIsExpense: (isExpense: boolean) => void;
+  handleChangeExpense: (isExpense: boolean) => void;
   isLoading: boolean;
   handleCreate: () => Promise<void>;
 }

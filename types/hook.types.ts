@@ -1,13 +1,13 @@
 import { Category } from "@/constants/categories";
 
-export interface CreateActivityForm {
+export interface ICreateActivityForm {
   title: string;
   amount: string;
   category: Category['name'];
   isExpense?: boolean;
 }
 
-export interface UseCreateActivityReturn {
+export interface IUseCreateActivityReturn {
   title: string;
   setTitle: (title: string) => void;
   amount: string;

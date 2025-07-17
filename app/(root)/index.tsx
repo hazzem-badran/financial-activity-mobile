@@ -1,9 +1,7 @@
-import { styles } from "@/assets/styles/home.styles";
-import ActivitiesItem from "@/components/ActivitiesItem";
-import BalanceCard from "@/components/BalanceCard";
-import NoActivitiesFond from "@/components/NoActivitiesFond";
-import PageLoader from "@/components/PageLoader";
-import { useActivities } from "@/Hook/useActivities";
+import { styles } from "@/styles/home.styles";
+import { NoActivitiesFound , BalanceCard } from "@/components/home";
+import { ActivitiesItem, PageLoader } from "@/components/shared";
+import { useActivities } from "@/hooks";
 import { useUser } from "@clerk/clerk-expo";
 import { useFocusEffect, useGlobalSearchParams } from "expo-router";
 import React, { useCallback } from "react";
@@ -20,22 +18,22 @@ export default function Page() {
     summary,
     loadData,
     handleDelete,
-    onRefresh
+    onRefresh,
   } = useActivities(user?.id || "");
 
   useFocusEffect(
     useCallback(() => {
       if (user?.id) {
-        if (!activities.length || newActivity === 'true') {
+        if (!activities.length || newActivity === "true") {
           loadData();
         }
       }
-    }, [user?.id, newActivity, activities.length])
+    }, [user?.id, newActivity, activities.length, loadData])
   );
 
   if (!user?.id || (isLoading && !refreshing)) {
     return <PageLoader />;
-  };
+  }
 
   return (
     <View style={styles.container}>
@@ -52,7 +50,6 @@ export default function Page() {
               <Text style={styles.welcomeText}>Welcome</Text>
 
               <Text style={styles.usernameText}>
-                
                 {user?.firstName ||
                   user?.username ||
                   user?.emailAddresses[0]?.emailAddress.split("@")[0] ||
@@ -67,7 +64,7 @@ export default function Page() {
         <View style={styles.activitiesHeaderContainer}>
           <Text style={styles.sectionTitle}>Recent Activities</Text>
         </View>
-    </View>
+      </View>
 
       <FlatList
         style={styles.activitiesList}
@@ -77,8 +74,10 @@ export default function Page() {
           <ActivitiesItem item={item} onDelete={handleDelete} />
         )}
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={<NoActivitiesFond/>}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+        ListEmptyComponent={<NoActivitiesFound />}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
       />
     </View>
   );

@@ -1,10 +1,10 @@
 // Authentication form interfaces
-export interface SignInFormData {
+export interface ISignInFormData {
   emailAddress: string;
   password: string;
 }
 
-export interface VerifyEmailProps {
+export interface IVerifyEmailProps {
   code: string;
   setCode: (code: string) => void;
   onVerifyPress: () => Promise<void>;
@@ -14,7 +14,7 @@ export interface VerifyEmailProps {
 }
 
 // Validation interfaces
-export interface ValidationResult {
+export interface IValidationResult {
   isValid: boolean;
   errors: {
     email?: string;
@@ -23,22 +23,22 @@ export interface ValidationResult {
 }
 
 // Auth hook return types
-export interface UseSignInFormReturn {
+export interface IUseSignInFormReturn {
   emailAddress: string;
-  setEmailAddress: (email: string) => void;
+  handleChangeEmail: (email: string) => void;
   password: string;
-  setPassword: (password: string) => void;
+  handleChangePassword: (password: string) => void;
   error: string | null;
   setError: (error: string | null) => void;
   onSignInPress: () => Promise<void>;
   isLoading: boolean;
 }
 
-export interface UseSignUpFormReturn {
+export interface IUseSignUpFormReturn {
   emailAddress: string;
-  setEmailAddress: (email: string) => void;
+  handleChangeEmail: (email: string) => void;
   password: string;
-  setPassword: (password: string) => void;
+  handleChangePassword: (password: string) => void;
   code: string;
   setCode: (code: string) => void;
   error: string | null;

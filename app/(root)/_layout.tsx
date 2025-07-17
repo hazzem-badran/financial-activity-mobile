@@ -1,6 +1,6 @@
-import { styles } from "@/assets/styles/layout.styles";
-import { SignOutButton } from "@/components/SignOutButton";
-import { COLORS } from "@/constants/colors";
+import { COLORS } from "@/app/theme/colors";
+import { styles } from "@/styles/layout.styles";
+import { SignOutButton } from "@/components/layout";
 import { Ionicons } from "@expo/vector-icons";
 import { DrawerItemList } from "@react-navigation/drawer";
 import { Drawer } from "expo-router/drawer";
@@ -31,7 +31,7 @@ function CustomDrawerContent(props: any) {
 
 export default function Layout() {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView  style={styles.flex}>
       <Drawer
         drawerContent={(props) => <CustomDrawerContent {...props} />}
         screenOptions={{

@@ -2,43 +2,43 @@ import { Category } from '@/constants/categories';
 import { TextInputProps } from 'react-native';
 
 // Auth Input component props
-export interface AuthInputProps extends TextInputProps {
+export interface IAuthInputProps extends TextInputProps {
   error?: boolean;
 }
 
 // Auth Button component props
-export interface AuthButtonProps {
+export interface IAuthButtonProps {
   title: string;
   onPress: () => void | Promise<void>;
   isLoading?: boolean;
 }
 
 // Auth Error component props
-export interface AuthErrorProps {
+export interface IAuthErrorProps {
   error: string | null;
   setError: (error: string | null) => void;
 }
 
 // Category Selector component props
-export interface CategorySelectorProps {
+export interface ICategorySelectorProps {
   selectedCategory: string | undefined;
   onSelectCategory: (category: string) => void;
   categories: Category[];
 }
 
 // Activity Type Toggle component props
-export interface ActivityTypeToggleProps {
+export interface IActivityTypeToggleProps {
   isExpense: boolean;
   setIsExpense: (isExpense: boolean) => void;
 }
 
-export type ActivityTypeOption = {
+export type IActivityTypeOption = {
   label: string;
   icon: 'arrow-down-circle' | 'arrow-up-circle';
   value: boolean;
 }
 
-export const ACTIVITY_TYPES: ActivityTypeOption[] = [
+export const ACTIVITY_TYPES: IActivityTypeOption[] = [
   {
     label: 'Expense',
     icon: 'arrow-down-circle',
@@ -52,11 +52,11 @@ export const ACTIVITY_TYPES: ActivityTypeOption[] = [
 ];
 
 
-export interface InputContainerProps {
+export interface IInputContainerProps {
   title: string;
-  setTitle: (value: string) => void;
+  changeTitle: (value: string) => void;
 }
-export interface AmountContainerProps {
+export interface IAmountContainerProps {
   amount: string;
-  setAmount: (value: string) => void;
+  changeAmount: (value: string) => void;
 }

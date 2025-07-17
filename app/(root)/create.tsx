@@ -1,23 +1,21 @@
-import { styles } from "@/assets/styles/create.styles";
-import ActivityTypeToggle from "@/components/ActivityTypeToggle";
-import AmountContainer from "@/components/AmountContainer";
-import AuthButton from "@/components/AuthButton";
-import CategorySelector from "@/components/CategorySelector";
-import InputContainer from "@/components/InputContainer";
+import { styles } from "@/styles/create.styles";
+import { ActivityTypeToggle } from "@/components/home";
+import { AmountContainer, Button, CategorySelector } from "@/components/shared/";
+import AmountInput from "@/components/shared/AmountInput";
 import { CATEGORIES } from "@/constants/categories";
-import { useCreateActivity } from "@/Hook/useCreateActivity";
+import { useCreateActivity } from "@/hooks/useCreateActivity";
 import { View } from "react-native";
 
 export default function Create() {
   const {
     title,
-    setTitle,
+    handleChangeTitle,
     amount,
-    setAmount,
+    handleChangeAmount,
     selectedCategory,
-    setSelectedCategory,
+    handleChangeSelectedCategory,
     isExpense,
-    setIsExpense,
+    handleChangeExpense,
     isLoading,
     handleCreate,
   } = useCreateActivity();
@@ -25,23 +23,21 @@ export default function Create() {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        {/* INPUT CONTAINER */}
-        <InputContainer title={title} setTitle={setTitle} />
+        {/* Amount CONTAINER */}
+        <AmountInput title={title} changeTitle={handleChangeTitle} />
 
         {/* AMOUNT CONTAINER */}
-        <AmountContainer amount={amount} setAmount={setAmount} />
+        <AmountContainer amount={amount} changeAmount={handleChangeAmount} />
 
         {/* TYPE SELECTOR */}
-        <ActivityTypeToggle isExpense={isExpense} setIsExpense={setIsExpense} />
-
-        
+        <ActivityTypeToggle isExpense={isExpense} setIsExpense={handleChangeExpense} />
 
         <CategorySelector
           categories={CATEGORIES}
           selectedCategory={selectedCategory}
-          onSelectCategory={setSelectedCategory}
+          onSelectCategory={handleChangeSelectedCategory}
         />
-        <AuthButton title="Save" onPress={handleCreate} isLoading={isLoading} />
+        <Button title="Save" onPress={handleCreate} isLoading={isLoading} />
       </View>
     </View>
   );
